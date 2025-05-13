@@ -12,6 +12,6 @@ public class TodoItem {
     private String title;
     private String description;
     private boolean completed;
-    private LocalDateTime createAt;
-    private LocalDateTime updateAt;
+//    private LocalDateTime createAt;
+//    private LocalDateTime updateAt;
 }
