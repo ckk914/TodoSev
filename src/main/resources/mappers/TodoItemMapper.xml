@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.kon.mapper.TodoItemMapper">
+<!-- 추가  -->
+    <insert id="insertTodoItem" parameterType="com.kon.entity.TodoItem" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO TodoItem (userId, title, description, completed, createAt, updateAt)
+        VALUES (#{userId}, #{title}, #{description}, #{completed}, SYSDATE, SYSDATE )
+    </insert>
+<!-- 전체 조회  -->
+    <select id="selectTodoItemById" parameterType="long" resultType="com.kon.entity.TodoItem">
+        SELECT * FROM TodoItem WHERE id = #{id}
+    </select>
+<!--    단일 조회   -->
+    <select id="selectTodoItemsByUserId" parameterType="string" resultType="com.kon.entity.TodoItem">
+        SELECT * FROM TodoItem WHERE userId = #{userId}
+    </select>
+<!-- 수정 -->
+    <update id="updateTodoItem" parameterType="com.kon.entity.TodoItem">
+        UPDATE TodoItem
+        SET title = #{title},
+        description = #{description},
+        completed = #{completed},
+        updateAt = SYSDATE
+        WHERE id = #{id}
+    </update>
+<!--  삭제 -->
+    <delete id="deleteTodoItem" parameterType="long">
+        DELETE FROM TodoItem WHERE id = #{id}
+    </delete>
+
+</mapper>
