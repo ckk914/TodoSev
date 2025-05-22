@@ -1,0 +1,15 @@
+<mapper namespace="com.kon.mapper.UserMapper">
+<!--   insert -->
+    <insert id="insertUser" parameterType="com.kon.entity.User">
+        INSERT INTO User (id, username, password, nickname, age)
+        VALUES (#{id}, #{username}, #{password}, #{nickname}, #{age})
+    </insert>
+
+    <select id="selectUserById" parameterType="String" resultType="com.kon.entity.User">
+        SELECT * FROM User WHERE id = #{id}
+    </select>
+
+    <select id="selectUserByUsername" parameterType="String" resultType="com.kon.entity.User">
+        SELECT * FROM User WHERE username = #{username}
+    </select>
+</mapper>
