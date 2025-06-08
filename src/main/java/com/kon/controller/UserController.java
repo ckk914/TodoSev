@@ -14,8 +14,8 @@ public class UserController {
 
     // 회원가입
     @PostMapping("/register")
-    public void registerUser(@RequestBody User user) {
-        userService.registerUser(user);
+    public void insertUser(@RequestBody User user) {
+        userService.insertUser(user);
     }
 
     // 사용자 정보 조회
