@@ -1,0 +1,12 @@
+
+### 테스트 정리
+- 회원가입: POST http://localhost:8181/api/user/register
+
+Body : raw-> json
+{
+  "id": "user001",
+  "username": "testuser",
+  "password": "1234",
+  "nickname": "테스트유저",
+  "age": 25
+}
